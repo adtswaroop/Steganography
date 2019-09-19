@@ -1,0 +1,33 @@
+The existing LSB Algorithm works as follows:
+DATA EMBEDDING
+Input: Cover image, stego-key and the text file
+Output: stego image
+Algorithm:
+• Step 1: Extract the pixels of the cover image.
+• Step 2: Extract the characters of the text message.
+• Step 3: Extract the characters from the Stego key.
+• Step 4: Choose first pixel and pick characters of the Stego key and place it in
+first component of pixel.
+• Step 5: Place some terminating symbol to indicate end of the key. 0 has been
+used as a terminating symbol in this algorithm.
+• Step 6: Insert characters of text le in each first component of next pixels by
+replacing it.
+• Step 7: Repeat step 6 till all the characters has been embedded.
+• Step 8: Again place some terminating symbol to indicate end of data.
+• Step 9: Obtained stego image
+
+DATA EXTRACTION
+Input: Stego-image file, stego-key
+Output: Secret text message.
+Algorithm:
+• Step 1: Extract the pixels of the stego image.
+• Step 2: Now, start from first pixel and extract stego key characters from
+first component of the pixels. Follow Step3 up to terminating symbol,
+otherwise follow step 4.
+• Step 4: If this extracted key matches with the key entered by the receiver,
+then follow Step 5, otherwise terminate the program
+• Step 5: If the key is correct, then go to next pixels and extract secret
+message
+• Characters from first component of next pixels. Follow Step 5 till up to
+terminating symbol, otherwise follow step 6.
+• Step 6: Extract secret message
